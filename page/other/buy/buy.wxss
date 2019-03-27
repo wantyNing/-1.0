@@ -1,0 +1,163 @@
+page{
+  background-color: #f1f1f1;
+  font-family: '宋体';
+}
+.rowflex{
+  display: flex;
+  flex-direction: row;
+}
+.head{
+  width: 100%;
+  position: fixed;
+  height: 160rpx;
+  top: 0;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.content{
+  width: 100%;
+  height: 140rpx;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+.content image{
+  width: 70rpx;
+  height: 70rpx;
+  margin: auto 24rpx;
+}
+.accept{
+  width: 85%;
+}
+.name{
+  height: 40%;
+  width: 100%;
+}
+.name text{
+  padding: 20rpx 0;
+}
+.name .nameText{
+  display: inline-block;
+  width: 65%;
+}
+.address{
+  margin-top: 15rpx;
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.address view{
+  width: 90%;
+  word-break: keep-all;
+  word-wrap: break-word
+}
+.address image{
+  width: 15rpx;
+  height: 20rpx;
+  margin-bottom: 60rpx;
+}
+.decorate{
+  width: 100%;
+  height: 13rpx;
+}
+.order{
+  margin-top: 20rpx;
+  height: 370rpx;
+  width: 100%;
+  background-color: #fff;
+  font-size: 25rpx;
+}
+.order-single{
+  padding: 10rpx 0;
+  margin: 0 auto;
+  border-bottom: 3rpx solid #f0f0f0;
+  width: 95%;
+}
+.order-single image{
+  width: 30rpx;
+  height: 30rpx;
+  margin:0 10rpx;
+}
+.orderInfo{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  height: 180rpx;
+  width: 95%;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+.orderInfo image{
+  height: 160rpx;
+  width: 170rpx;
+}
+.property{
+  margin-top:10rpx;
+  color:#9d9d9d;
+}
+.price{
+  color: #f45448;
+  font-weight: 700;
+  font-size: 35rpx;
+  width: 90%;
+}
+.chose_logistic{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.logprice{
+  font-size: 32rpx;
+  float: right; 
+  margin:14rpx; 
+  color:#f45448;
+  font-weight: 600;
+}
+.costDetail{
+  width: 100%;
+  height: 270rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.costHead{
+  width: 100%;
+  font-size: 30rpx;
+  font-weight: 700;
+  padding: 20rpx 20rpx;
+  border-bottom: 3rpx solid #9d9d9d;
+}
+.blank,.blank1{
+  font-size: 32rpx;
+  padding: 4rpx 15rpx;
+}
+.blank1{
+  color: #f45448;
+  font-weight: 600;
+}
+.end{
+  height: 100rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  box-shadow: 0 -2px 1px #e5e5e5;
+  z-index: 9;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+   font-size: 35rpx;
+}
+.end .btn{
+  background-color: #f34235;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  width: 200rpx;
+  right: 0;
+}
+.total{
+  color: #f45448;
+  line-height: 100rpx;
+  padding-right:50rpx;
+}

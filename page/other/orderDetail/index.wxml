@@ -1,0 +1,82 @@
+<view class="orderState">
+  <image src="{{img_url}}w_house.png" wx:if="{{tab==0}}"></image>
+  <image src="{{img_url}}serive2.png" wx:elif="{{tab==1}}"></image>
+  <image src="{{img_url}}liebiao.png" wx:elif="{{tab==2}}"></image>
+  <image src="{{img_url}}shaixuan.png" wx:else></image>
+  <view style='color:#ea4648;font-size:40rpx;width:55%;font-weight:550'>
+    <text wx:if="{{tab==0}}">待支付</text>
+    <text wx:elif="{{tab==1}}">待发货</text>
+    <text wx:elif="{{tab==2}}">待收货</text>
+    <text wx:else>交易成功</text>
+  </view>
+  <view wx:if="{{tab==0}}">支付剩余{{orderList.payTime}}</view>
+</view>
+<view class="userInfo">
+  <image src="{{img_url}}w_location.png"></image>
+  <view>
+    <view>
+      <text class="detailInfo">{{orderList.user}}</text>
+      <text class="detailInfo">{{orderList.telephone}}</text>
+    </view>
+    <view style='color:#a5a5a5;font-size:30rpx; width:93%;'>{{orderList.address}}</view>
+  </view>
+</view>
+<view class="goodInfo">
+  <image src="{{orderList.mainPicUrl}}"></image>
+  <view style='width:90%'>
+    <view class="pro-title">{{orderList.title}}</view>
+    <view class='price'>
+      <text style='color:#e93e40;font-size:36rpx; display:inline-block;width:90%;'>￥{{orderList.price}}</text>
+      <text style='font-size:25rpx; display:inline-block;'>x{{orderList.total}}</text>
+    </view>
+  </view>
+</view>
+<view class="orderInfo">
+  <view class="info">
+    <view class="infoItem">
+      <text>订单编号 : </text>
+      <text class="infos">{{orderList.order.id}}</text>
+    </view>
+    <view class="infoItem">
+      <text>下单时间 : </text>
+      <text class="infos">{{orderList.order.time}}</text>
+    </view>
+    <view class="infoItem">
+      <text>商品金额 : </text>
+      <text class="infos">{{orderList.price}}</text>
+    </view>
+    <view class="infoItem">
+      <text>配送方式 : </text>
+      <text class="infos">{{orderList.order.deliver}}</text>
+    </view>
+  </view>
+  <view class="info">
+    <view class="infoItem">
+      <text>发票类型 : </text>
+      <text class="infos">{{orderList.invoice.style}}</text>
+    </view>
+    <view class="infoItem">
+      <text>发票抬头 : </text>
+      <text class="infos">{{orderList.invoice.belong}}</text>
+    </view>
+    <view class="infoItem">
+      <text>发票内容 : </text>
+      <text class="infos">{{orderList.invoice.content}}</text>
+    </view>
+  </view>
+  <view class="info">
+    <view style='color:#000;'>
+      <text class="infoleft">商品总额</text>
+      <text class="inforight">￥{{orderList.price}}</text>
+    </view>
+    <view style='color:#000;'>
+      <text class='infoleft'>运费</text>
+      <text class="inforight">+￥{{orderList.order.deliverPrice}}</text>
+    </view>
+    <view style='font-size:35rpx; font-weight:600; margin-top:20rpx; text-align:right;'>
+      <text style='color:#000;'>应付金额: </text>
+      <text style='color:#e93e40'> ￥{{price}}</text>
+    </view>
+  </view>
+</view>
+<view style='height:60rpx;'></view>

@@ -1,0 +1,111 @@
+<view class="content">
+  <view class="header">
+    <view class="selfIn">
+      <view class="mapIn">
+        <image class='head_portrait' src="{{head_portrait}}" bindtap='login'></image>
+        <view class="inlin">
+           <text class="use_name">{{state_text}}</text>
+           <view class="grade">V</view>
+        </view>
+        <image class="switch" src='{{img_url}}next.png'></image>
+      </view>
+      <view class="opera">
+        <view class="opera_1" bindtap='collect'>收藏夹</view>
+        <view class="opera_1" bindtap='wallet'>关注</view>
+        <view class="opera_1" bindtap='downloaded'>已下载</view>
+        <view class="opera_1" bindtap='remind'>更新提醒</view>
+      </view>
+    </view>
+  </view>
+  <view class="body">
+    <view class="order_admin">
+      <view class="op_head">
+        <view class="op_left">订单管理</view>
+        <image class="op_b_right" src="{{img_url}}next.png"></image>
+        <view class="op_right" bindtap="gotoOrder" data-index='0'>所有订单列表</view>
+      </view>
+      <view class="line"></view>
+      <view class="op_content">
+        <view class="items"  bindtap="gotoOrder" data-index='1'>
+          <view class="ad d1 a1">{{orderNum.creat}}</view>
+          <!-- <image src='{{img_url}}logo.png'></image> -->
+          <image src='{{img_url}}待创建.png'></image>
+          <view class="opera_2">待创建</view>
+        </view>
+        <view class="items" bindtap="gotoOrder" data-index='2'>
+          <view class="ad d2 a1">{{orderNum.deal}}</view>
+          <!-- <image src='{{img_url}}logo.png'></image> -->
+          <image src='{{img_url}}待处理.png'></image>
+          <view class="opera_2">待处理</view>
+        </view>
+        <view class="items" bindtap="gotoOrder" data-index='3'>
+          <view class="ad d3 a1">{{orderNum.deliver}}</view>
+          <!-- <image src='{{img_url}}logo.png'></image> -->
+          <image src='{{img_url}}已发货.png'></image>
+          <view class="opera_2">已发货</view>
+        </view>
+        <view class="items" bindtap="gotoOrder" data-index='4'>
+          <view class="ad d4 a1">{{orderNum.serice}}</view>
+          <!-- <image src='{{img_url}}logo.png'></image> -->
+          <image src='{{img_url}}售后订单.png'></image>
+          <view class="opera_2">售后订单</view>
+        </view>
+      </view>
+    </view>
+    <view class="order_admin">
+      <view class="op_head">
+        <view class="op_left">产品管理</view>
+        <image class="op_b_right" src="{{img_url}}next.png"></image>
+        <view class="op_right" bindtap='gotoGoods' data-index='0'>第三方平台产品状态</view>
+      </view>
+      <view class="line"></view>
+      <view class="op_content">
+        <view class="items" bindtap='gotoGoods' data-index='1'>
+          <view class="ad d1 a2">{{productNum.audit}}</view>
+          <image src='{{img_url}}审核中.png'></image>
+          <view class="opera_2">审核中</view>
+        </view>
+        <view class="items" bindtap='gotoGoods' data-index='2'>
+          <view class="ad d2 a2">{{productNum.sell}}</view>
+          <image src='{{img_url}}销售中.png'></image>
+          <view class="opera_2">销售中</view>
+        </view>
+        <view class="items" bindtap='gotoGoods' data-index='3'>
+          <view class="ad d3 a2">{{productNum.out}}</view>
+          <image src='{{img_url}}已下架.png'></image>
+          <view class="opera_2">已下架</view>
+        </view>
+        <view class="items" bindtap='gotoGoods' data-index='4'>
+          <view class="ad d4 a2">{{productNum.stockout}}</view>
+          <image src='{{img_url}}即将缺货.png'></image>
+          <view class="opera_2">即将缺货</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="my_tool">
+      <view class="op_head">
+        <view class="op_left">我的工具</view>
+        <image class="op_b_right" src="{{img_url}}next.png"></image>
+        <view class="op_right">全部工具</view>
+      </view>
+      <view class="line"></view>
+      <view class="op_content">
+         <view class="items">
+          <image src='{{img_url}}logo.png'></image>
+          <view class="opera_2" bindtap='sync'>订单同步</view>
+        </view>
+        <view class="items">
+          <image src='{{img_url}}logo.png'></image>
+          <view class="opera_2" bindtap='sold_out'>产品下架</view>
+        </view>
+        <view class="items">
+          <image src='{{img_url}}logo.png'></image>
+          <view class="opera_2" bindtap='more_tools'>更多工具</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+

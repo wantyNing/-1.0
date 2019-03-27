@@ -1,0 +1,64 @@
+<view class="product">
+  <view class='head'>
+    <view class="heads"> 
+      <view class="opera{{tab == 0?' active' : ''}}" bindtap='click' data-tap="0">全部</view>
+      <view class="opera{{tab == 1?' active' : ''}}" bindtap='click' data-tap="1">待付款</view>
+      <view class="opera{{tab == 2?' active' : ''}}" bindtap='click' data-tap="2">待发货</view>
+      <view class="opera{{tab == 3?' active' : ''}}" bindtap='click' data-tap="3">已发货</view>
+      <view class="opera{{tab == 4?' active' : ''}}" bindtap='click' data-tap="4">售后</view>
+    </view>
+  </view>
+  <view class="hed"></view>
+  <view class="body">
+      <block wx:for="{{showorderlist}}" wx:key="prolist" wx:for-item="order">
+      <view class="products">
+        <view class="product-single">
+          <view class="locates">
+             <image src="{{img_url}}logo.png"></image>
+             <text>{{order["locate"]}}平台</text>
+          </view>
+          <view class="state">
+            <text wx:if="{{order.state==0}}">待付款</text>
+            <text wx:elif="{{order.state==1}}">待发货</text>
+            <text wx:elif="{{order.state==2}}">已发货</text>
+            <text wx:else="{{order.state==3}}">交易完成</text>
+          </view>
+        </view>
+        <view class="proInfo" bindtap='gotoOrderDetail' data-list="{{order}}">
+          <image src="{{order.mainPicUrl}}"></image>
+          <view class="info1">
+            <view class="pro-title">{{order.title}}</view>
+            <view class="property">
+              <block wx:for="{{order.property}}" wx:key="property" wx:for-item="pros">
+                <view class="show-property">{{pros}}</view>
+              </block>
+            </view>
+          </view>
+          <view class='price'>
+            <view><text style='color:#000;font-size:22rpx;'>￥{{order.price}}</text></view>
+            <view style='margin: 20rpx 0;'>x{{order.total}}</view>
+          </view>
+        </view>
+        <view style='text-align:right; margin:10rpx 0; margin-right:20rpx;'>共{{order.total}}件商品，合计：￥{{order.totalprice}}</view>
+        <view class="btn">
+          <block wx:if="{{order.state==0}}">
+            <view class="operate">取消订单</view>
+            <view class="operate act">支付订单</view>
+          </block>
+          <block wx:elif="{{order.state==1}}">
+            <view class="operate">联系退货</view>
+            <view class="operate act">提醒发货</view>
+          </block>
+          <block wx:elif="{{order.state==2}}">
+            <view class="operate">联系退货</view>
+            <view class="operate act">跟踪号查看</view>
+          </block>
+          <block wx:else="{{order.state==3}}">
+            <view class="operate">联系退货</view>
+            <view class="operate act">再次购买</view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

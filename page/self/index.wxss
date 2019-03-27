@@ -1,0 +1,179 @@
+page{
+  background-color: #F1F1F1;
+}
+.content{
+  font-family: -apple-system-font, Helvetica Neune;
+  height: 100%;
+}
+.header{
+  width: 100%;
+  height: 260rpx;
+  background-color: #f54844;
+  text-align: center;
+  overflow-y: visible;
+}
+.selfIn{
+  margin: 0 auto;
+  width: 90%;
+  height: 310rpx;
+  border-radius: 40rpx;
+  background-color: #fff;
+}
+.mapIn{
+  display: flex;
+  flex-direction: row;
+}
+.head_portrait{
+  width: 130rpx;
+  height: 130rpx;
+  margin-left: 35rpx;
+  margin-top: 40rpx;
+  border-radius: 100rpx;
+  background-color: #CDCDCD;
+}
+.inlin{
+  margin-top: 60rpx;
+  display: inline-block;
+}
+.inlin .use_name{
+  font-family: '宋体';
+  font-size: 28rpx;
+  margin-top: 70rpx;
+  margin-left: 25rpx;
+}
+.inlin .grade{
+  font-family: 'times new roman';
+  font-style: italic;
+  font-size: 18rpx;
+  text-align: left;
+  color:yellow;
+  margin-left:25rpx;
+  margin-top: 10rpx;
+  padding-left: 8rpx;
+  width: 50rpx;
+  height: 25rpx;
+  background-color: #f34235;
+  border-radius: 10rpx;
+}
+.mapIn .switch{
+  margin-left: 330rpx;
+  margin-top: 95rpx;
+  width: 15rpx;
+  height: 30rpx;
+}
+.opera{
+  height: 36%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.opera_1{
+  width: 15%;
+  color: #b2b2b2;
+  font-size: 22rpx;
+  margin-top: 75rpx;
+}
+.body{
+  margin-top:80rpx;
+}
+.op_head{
+  height: 30%;
+}
+.op_left{
+  font-family: '宋体';
+  font-size: 25rpx;
+  margin-top:35rpx;
+  margin-left: 35rpx;
+  float: left;
+}
+.op_b_right{
+  float:right;
+  width: 10rpx;
+  height: 20rpx;
+  margin-top:38rpx;
+  margin-right: 50rpx;
+}
+.op_right{
+  float:right;
+  font-family: '宋体';
+  color:#b2b2b2;
+  font-size: 25rpx;
+  margin-top:35rpx;
+  margin-right:15rpx;
+}
+.line{
+  width: 90%;
+  border-bottom:2rpx solid #E0E3DA;
+  opacity: 1;
+  margin-left: 25rpx;
+}
+.order_admin{
+  margin: 30rpx auto;
+  width: 90%;
+  height: 290rpx;
+  border-radius: 40rpx;
+  background-color: #fff;
+}
+.my_tool{
+  margin: 30rpx auto;
+  width: 90%;
+  height: 290rpx;
+  border-radius: 40rpx;
+  background-color: #fff;
+}
+.op_content{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.items{
+  margin-top: 40rpx; 
+  width: 16%;
+  margin-left: 45rpx;
+}
+.items image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 18rpx;
+  margin-left: 20rpx;
+}
+.opera_2{
+  color: #b2b2b2;
+  font-size: 22rpx; 
+  margin-left: 10rpx;
+}
+.ad{
+  position: absolute;
+  border-radius: 100%;
+  color: #f56c6c;
+  background-color: #fff;
+  font-size: 20rpx;
+  height: 25rpx;
+  line-height: 25rpx;
+  padding: 2rpx 9rpx;
+  text-align: center;
+  white-space: nowrap;
+  border: 4.5rpx solid  #f56c6c;
+  font-weight: 600;
+}
+.a1{
+    top: 450rpx;
+}
+.a2{
+    top: 770rpx;
+}
+.d1{
+    left: 140rpx;
+}
+.d2{
+  left: 292rpx;
+}
+.d3{
+  left: 452rpx;
+}
+.d4{
+  left: 604rpx;
+}

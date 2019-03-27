@@ -1,0 +1,100 @@
+page{
+  background-color: #f7f7f7;
+  font-family: '微软雅黑';
+  font-weight: 550;
+}
+.orderState{
+  background-color: #fff;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  margin-top: 1rpx;
+}
+.orderState image{
+  margin: auto 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.userInfo{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 180rpx;
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+.userInfo image{
+  width: 70rpx;
+  height: 60rpx;
+  margin: auto 20rpx;
+  line-height: 200rpx;
+}
+.detailInfo{
+  line-height: 50rpx;
+  font-size: 32rpx;
+  padding-right: 20rpx;
+  display: inline-block;
+  margin-top: 20rpx;
+}
+.goodInfo{
+  display: flex;
+  flex-direction: row;
+  margin-top: 40rpx;
+  height: 200rpx;
+  width: 100%;
+  background-color: #fff;
+}
+.goodInfo image{
+  height: 160rpx;
+  width: 170rpx;
+  margin: 20rpx auto;
+}
+.pro-title{
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+  font-size: 32rpx;
+  width: 90%;
+  margin-top: 20rpx;
+}
+.price{
+  margin-top: 20rpx;
+}
+.orderInfo{
+  width: 100%;
+  height: 650rpx;
+  background-color: #fff;
+  font-size: 32rpx;
+  margin-top: 40rpx;
+}
+.info{
+  width: 90%;
+  margin: 0 auto;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.infoItem{
+  color: #a0a0a0;
+  padding-bottom: 10rpx;
+}
+.infos{
+  color: #000;
+}
+.infoleft{
+  width:20%; 
+  text-align:left;
+  display: inline-block;
+}
+.inforight{
+  display: inline-block;
+   color:#e93e40; 
+   text-align: right;
+   width: 80%;
+}

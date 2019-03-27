@@ -1,0 +1,51 @@
+<view class='head'>
+  <scroll-view wx:if="{{!fold}}" class="head-left" scroll-into-view="{{toView}}" scroll-x >
+    <block wx:for="{{discountList}}" wx:key="discount-list">
+      <view id="{{item.id}}" class="items{{item.type==tab?' active':''}}" data-type="{{item.type}}" catchtap='changetab'>
+        <view class="head-text">{{item.title}}</view>
+      </view>
+    </block>
+  </scroll-view>
+  <view wx:else class="head-left">
+    <view class="head-text items">全部8个分类</view>
+  </view>
+  <view class="head-right" bindtap="changeFold">
+    <image wx:if="{{!fold}}" src="https://mall-imgs.oss-cn-hangzhou.aliyuncs.com/wechat/down.png"></image>
+    <image wx:else src="https://mall-imgs.oss-cn-hangzhou.aliyuncs.com/wechat/up.png"></image>
+  </view>
+</view>
+<view class="popuoDom" hidden='{{!fold}}' catchtap='changeFold'>
+  <view class="together">
+    <block wx:for="{{discountList}}" wx:key="list">
+      <view class="single{{item.type==tab?' actives':''}}" data-type="{{item.type}}" bindtap='changetab'>{{item.title}}</view>
+    </block>
+  </view>
+</view>
+<view style='height:100rpx;'></view>
+<image class="title" src="http://wanty.oss-cn-beijing.aliyuncs.com/haili/label.png"></image> 
+<view class="body">
+  <block wx:for="{{coupon}}" wx:key="coupon">
+    <view class="body-item">
+      <image src="{{item.pic}}"></image>
+      <view class='body-item-desc'>
+        <view class="desc-title">{{item.desc}}</view>
+        <view class="desc-value">
+          ￥<text class="value">{{item.value}}</text>
+          <text class="condition">{{item.style}}</text>
+        </view>
+      </view>
+      <view class="body-capacity" wx:if="{{item.state==1}}">
+        <view class="wrap">
+          <view class="top">
+            <canvas class="cir" style="width:212px; height:212px;" canvas-id="canvan{{index}}"></canvas>
+            <view class="cc">剩余{{item.num*100}}%</view>
+          </view>
+        </view>
+        <view class='state' bindtap='getCoupon' data-index="{{index}}">立即领取</view>
+      </view>
+      <view wx:else class='body-capacity'>
+        <view class="use" bindtap='gotoSearch' data-text="{{item.text}}">去使用</view>
+      </view>
+    </view>
+  </block>
+</view>

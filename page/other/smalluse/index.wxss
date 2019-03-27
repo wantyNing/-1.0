@@ -1,0 +1,112 @@
+.head{
+  display: flex;
+  width: 100%;
+  white-space: nowrap; 
+  flex-direction: row;
+  font-size: 30rpx;
+  overflow-y: scroll;
+  position: fixed;
+  background-color: #fff;
+  z-index: 10;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.items{
+  height: 120rpx;
+  margin:15rpx 25rpx;
+  color: #929292;
+}
+.items image{
+  margin-left: 15rpx;
+  height: 80rpx;
+  width: 80rpx;
+}
+.active{
+  color: #f54844;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 148rpx;
+  height: 80rpx;
+  background-color: #e9e8ed;
+  width:100%;
+  font-size: 28rpx;
+  z-index: 9;
+}
+.neir{
+  font-weight: 400;
+  line-height: 50rpx;
+  height: 50rpx;
+  padding: 5rpx 35rpx;
+  background-color: #fff;
+  margin: auto 0;
+  margin-left: 20rpx;
+  border-radius: 40rpx;
+}
+.chose{
+  background-color: #e9383d;
+  color: #fff;
+}
+.body{
+  background-color: #fff;
+  height: 1500rpx;
+  widows: 100%;
+}
+.promo-con{
+  background:linear-gradient(to right, #f0efff , #c5c7fe);
+  height: 375rpx;
+  width: 90%;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  box-shadow:1px 1px 1px 1px #f1f1f1;
+  opacity: 0.7;
+}
+.pro-title{
+  height: 38rpx;
+  width: 130rpx;
+  background-color:#fe6f60;
+  font-size:20rpx; 
+  line-height: 38rpx;
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
+  border-bottom-right-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+}
+.pro-center{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.po1{
+  width: 250rpx;
+  height: 250rpx;
+  margin-right: 20rpx;
+  box-shadow:-2rpx 3rpx 1rpx #f3f3f9;
+  border-radius: 20rpx;
+  z-index: 10;
+}
+.po2{
+  margin-top: 20rpx;
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 20rpx;
+  position: relative;
+  left: 60rpx;
+}
+.pro-time{
+  background-color: #fff;
+  color: #a1a1a1;
+  font-size: 30rpx;
+  height: 72rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  padding-left: 20rpx;
+  line-height: 72rpx;
+}

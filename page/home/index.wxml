@@ -1,0 +1,95 @@
+<!-- <view class="ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
+      <image src='{{img_url}}cancel.png' class='ruleHide' bindtap='hideRule'></image>
+      <image src="{{img_url2}}newli.jpg" class="dispP" bindtap='gotoFresh'></image>
+</view> -->
+<view class="content">
+  <view class="header">
+   <image src="{{img_url}}logo.png"></image>
+    <view class="search" bindtap="search">
+      <image src="{{img_url}}search.png"></image>
+      <text>搜索商品</text>
+    </view>
+  </view>
+  <view class="body">
+    <view class="disp">
+      <swiper class="swipers" indicator-dots="{{indicatorDots}}" circular='true' bindchange="swiperChange" autoplay='true' interval='2000'>
+        <block wx:for="{{imgUrls}}" wx:key="scroll">
+          <swiper-item>
+            <image src="{{item.url}}" data-id="{{item.id}}" class="slide_image" bindtap='disp_click'/>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="dots">  
+        <block wx:for="{{imgUrls}}" wx:key="dot">  
+            <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>  
+        </block>  
+      </view> 
+    </view>
+    <view class="small-use">
+      <block wx:for="{{btn}}" wx:key="btn">
+        <view class="blok" bindtap='blok' data-type="{{item.type}}" >
+          <image src="{{item.img}}"></image>
+          <view class="txt">{{item.title}}</view>
+        </view>
+      </block>
+    </view>
+    <view class="quality">
+      <view class="quality_head">
+        <view class="left"></view>
+        <view class="left_name">优质品牌</view>
+        <view class="right" data-type="brand" bindtap="more">更多..</view>
+      </view>
+      <view class="brand">
+        <image class="image_le" src="http://wanty.oss-cn-beijing.aliyuncs.com/haili/brand.png" data-id="{{image_le.id}}" bindtap="brand_click"></image>
+        <view class="right_brand">
+          <image class="image_ri" src="{{image_ri_1.url}}" data-id="{{image_ri_1.id}}" bindtap="brand_click"></image>
+          <image class="image_ri" src="http://wanty.oss-cn-beijing.aliyuncs.com/haili/brand2.png" data-id="{{image_ri_2.id}}" bindtap="brand_click"></image>
+        </view>
+      </view>
+    </view>
+    <view class="new_goods">
+      <view class="quality_head">
+        <view class="left"></view>
+        <view class="left_name">畅销新品</view>
+        <view class="right" data-type="new" bindtap="more">更多..</view>
+      </view>
+      <block class="goods_style">
+        <view class="goods_info{{index%2==0?' bord':''}}" wx:for="{{newGoods}}" wx:key="goods_map" wx:for-item="newP">
+          <view data-id="{{newP.id}}" bindtap="gotoProductDetail">
+            <image src="{{newP.pictureUrl}}"></image>
+            <view class="goods_name">{{newP.description}}</view>
+            <view class="goods_price">￥{{newP.price}}</view>
+            <view style='display:flex; flex-direction:row; font-size:22rpx;color:#898989;'>
+              <view style='font-size:22rpx;'>销量：{{newP.sale}}</view>
+              <view style='margin-left:20rpx;'>下载数：1000</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="hotGoods">
+      <view class="quality_head">
+        <view class="left"></view>
+        <view class="left_name">热销商品</view>
+        <view class="right" data-type="hot" bindtap="more">更多..</view>
+      </view>
+      <block class="goods_style">
+        <view class="goods_info{{index%2==0?' bord':''}}" wx:for="{{hot_Goods}}" wx:key="goods_hot" wx:for-item="hotP">
+          <view data-id="{{hotP.id}}" bindtap="gotoProductDetail">
+            <image src="{{hotP.pictureUrl}}"></image>
+            <view class="goods_name">{{hotP.description}}</view>
+            <view class="goods_price">￥{{hotP.price}}</view>
+            <view style='display:flex; flex-direction:row; font-size:22rpx;color:#898989;'>
+              <view style='font-size:22rpx;'>销量：{{hotP.sale}}</view>
+              <view style='margin-left:20rpx;'>下载数：1000</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view hidden="{{hidden_end}}" class="fresh">
+  </view>
+  <view hidden="{{hint}}" class="hind">已经到底了</view>
+  <loading hidden="{{hidden}}">加载中</loading>
+</view>

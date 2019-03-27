@@ -1,0 +1,110 @@
+<view class="detail">
+  <view class="mpslider">
+    <swiper autoplay="{{autoplay}}" class="vg" bindchange="swiperChange" circular="true">
+      <block wx:for="{{imgUrl}}" wx:key="disp">
+        <swiper-item>
+          <image src="{{item}}" class="slider_image"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dots">  
+      <block wx:for="{{imgUrl}}" wx:key="dot">  
+          <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>  
+      </block>  
+    </view>  
+  </view>
+  <view class="baseInfo">
+    <view class="infohead">
+      <view class="priceinfo">￥{{productData.price.common}}</view>
+      <!-- <view class="priceinfo" wx:else>￥{{productData.price.vip}}</view> -->
+      <view class="collect" bindtap='collectshop'>
+        <image src="{{collect}}"></image>
+        <text>收藏</text>
+      </view>
+    </view>
+    <view class="detailinfo">{{productData.describe}}</view>
+    <view class="sellinfo">
+      <text>月销  {{productData.sell}}</text>
+      <text>下载量  {{productData.download}}</text>
+    </view>
+  </view>
+  <view class="coupon">
+    <view class="promotion_head">
+      <text class="prom">领劵</text>
+      <block wx:for="{{coupon}}" wx:key="coupon">
+        <text class="quan">{{item}}</text>
+      </block>
+    </view>
+  </view>
+  <view class="promotion" wx:if="{{ispromotion}}">
+      <view class="promotion_head">
+        <text class="prom">促销</text>
+        <text class="proms">商品现有以下促销</text>
+      </view>
+      <view class="full">
+        <block wx:for="{{promotion}}" wx:key="promotion">
+          <view class="line"></view>
+          <text class="title">{{item.title}}</text>
+          <text class="content">{{item.content}}</text>
+          <image class="right" src="{{img_url}}next.png"></image>
+        </block>
+      </view>
+  </view>
+  <view class="property">
+    <view class="property_head">
+      <text class="leftinfo">产品状态</text>
+      <text class='state'>{{state}}</text>
+    </view>
+    <view class="property_head bott" bindtap="open_pro">
+      <text class='leftinfo'>产品属性</text>
+      <text class='middleinfo'>{{select}}</text>
+      <image class="rights" wx:if="{{choose}}" src="{{img_url}}up.png"></image>
+      <image class="rights" wx:else src="{{img_url}}down.png"></image>
+    </view>
+    <view class="property_choose" hidden="{{choose}}">
+      <view wx:for="{{proChose}}" wx:key="choose" class="index_type" wx:for-index="ids" wx:for-item="itemName">
+        <view class="protype">{{itemName.productAttributeName}}</view>
+        <view class="detailt">
+          <block wx:for="{{itemName.value}}" wx:key="details" wx:for-index="id" wx:for-item="name">
+            <view class="detailts{{name == property[ids]?' item-active' : ''}}" data-id="{{ids}}" data-cs="{{name}}" bindtap='changPeoperty'>{{name}}</view>
+          </block>
+        </view>
+      </view>
+      <view class="detailt">
+        <view class="protype">数量</view>
+        <view class="minus" bindtap="minusGoods">-</view>
+        <view class="count">{{buynum}}</view>
+        <view class="add" bindtap="addGoods">+</view>
+      </view>
+    </view>
+    <view class='btn_bar'>
+      <view class='icon'>
+        <view class="icon_cart">
+          <image src='{{img_url}}serive2.png'></image>
+          <text>客服</text>
+        </view>
+        <view class="icon_cart" bindtap='gotobuyCar'>
+          <text class='badge' wx:if='{{badgeCount > 0}}'>{{badgeCount}}</text>
+          <image src='{{img_url}}cart.png'></image>
+          <text>购物车</text>
+        </view>
+      </view>
+      <view class='cart_btn'>
+        <button bindtap='addCarts' class='cart'>加入购物车</button>
+        <button bindtap="buy" class='buy'>立即购买</button>
+      </view>
+    </view>
+  </view>
+  <view class="introduce_block">
+    <view class="introduce_head">
+      <view class="option{{tab == 0?' option_active' : ''}}" bindtap="changeTab" data-tab="0">商品介绍</view>
+      <view class="option{{tab == 1?' option_active' : ''}}" bindtap="changeTab" data-tab="1">参数规格</view>
+      <view class="option{{tab == 2?' option_active' : ''}}" bindtap="changeTab" data-tab="2">成本估算</view>
+      <view class="option{{tab == 3?' option_active' : ''}}" bindtap="changeTab" data-tab="3">售后服务</view>
+    </view>
+    <view>
+      <introduce currentTab="{{tab}}" introList="{{productData}}"></introduce>
+    </view>
+  </view>
+   <view class="last"></view>
+</view>

@@ -1,0 +1,111 @@
+.content{
+  font-family: "Microsoft YaHei";
+  background-color: #fff;
+  height: 100%;
+}
+.hr{
+  height: 250rpx;
+}
+.hr image{
+  width: 353rpx;
+  height: 93rpx;
+  margin-top: 50rpx;
+  margin-left: 200rpx;
+}
+.hr .head_txt{
+  font-family: '微软雅黑';
+  text-align: left;
+  margin-top: 20rpx;
+  margin-left: 25rpx;
+}
+.head_txt .text1{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.head_txt .text2{
+  margin-top:60rpx;
+  font-size: 30rpx;
+}
+.bg{
+  width:100%;
+  height: 35%;
+  background-color: #fff;
+  margin-top: 25rpx;
+}
+.item{
+  height: 150rpx;
+  line-height: 120rpx;
+  align-items: center;
+}
+.name{
+  width:20%;
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  height: 90rpx;
+}
+.value{
+  width:90%;
+  line-height: 150rpx;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  display: flex;
+}
+.holder{
+  color:#AEAEAE;
+  font-size: 30rpx;
+}
+.line{
+  width: 95%;
+  height: 3rpx;
+  border-bottom: 2rpx solid #E0E3DA;
+  margin: 0 auto;
+}
+.value input{
+  width: 90%;
+}
+.remePsw{
+  margin-left: 30rpx;
+  margin-top: 70rpx;
+  font-size: 40rpx;
+  zoom: 70%;
+}
+.up{
+  display: flex;
+}
+.checkUp{
+  width: 70%;
+}
+.forget{
+  margin-right: 35rpx;
+  margin-top: 55rpx;
+  float: right;
+  color: #F34235;
+  font-size: 30rpx;
+}
+.btn_log{
+  margin-top: 250rpx;
+  background-color: #F34235;
+  width: 90%;
+  height: 108rpx;
+  color: #ffffff;
+  padding: 12rpx;
+  font-size: 30rpx;
+  vertical-align: middle;
+}
+.btn_register{
+  margin-top: 25rpx;
+  padding-top:12rpx; 
+  font-size: 30rpx;
+  height: 108rpx;
+  color: #F34235;
+  background-color: #fff;
+  border:1px solid #F34235;
+  width: 90%;
+  vertical-align: middle;
+}
+.searchRight image{
+  width: 38rpx;
+  height: 38rpx;
+  margin-left: 25rpx;
+  float: right;
+}

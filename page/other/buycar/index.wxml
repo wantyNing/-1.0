@@ -1,0 +1,64 @@
+<view>
+  <view class='empty_wrap' wx:if='{{buylist.length == 0}}'>
+    <image class='empyt_icon' src='http://wanty.oss-cn-beijing.aliyuncs.com/haili/shop_cart.png'></image>
+    <text class='empyt_txt'>购物车空空如也，去逛逛吧~</text>
+  </view>
+  <view wx:else>
+    <view class="head">
+      <view class="goodsNum">共{{goodsNum}}件商品</view>
+      <text wx:if="{{!isEdit}}">编辑</text>
+      <text wx:else>完成</text>
+      <image src="{{img_url}}w_edit.png" bindtap='edit' wx:if="{{!isEdit}}"></image>
+      <image src="{{img_url}}w_finish.png" bindtap="edit" wx:else></image>
+    </view>
+    <view class="body">
+      <block wx:for="{{buylist}}" wx:key="buylist">
+        <view class="content" catchtap='gotoProducrDetail' data-id="{{item.productId}}">
+          <view class="select_icon" data-index="{{index}}" catchtap="selectProduct">
+            <image wx:if='{{item.select}}' src='{{img_url}}w_covered.png'></image>
+            <image wx:else src='{{img_url}}w_cover.png'></image>
+          </view>
+          <view class="goods">
+            <image class="good_img" src="{{item.mainPicUrl}}"></image>
+            <view class="good_info">
+              <view class="good_title">
+                <text>{{item.title}}</text>
+              </view>
+              <view class="selectPro" catchtap="open">
+                <view class="selected">{{item.property}}</view>
+                <image src="{{img_url}}down.png"></image>
+              </view>
+              <view class="good_price">
+                <text class="price">￥{{item.price}}</text>
+                <count bind:getSelectNum="getCartCount" data-index="{{index}}" count="{{item.total}}"
+                  bind:addEvent="addNums" bind:subEcent="subNums"/>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class="endw"></view>
+    </view>
+    <view class="end">
+      <view class='select_all' catchtap='selectAll'>
+        <image wx:if='{{selectAll}}' src='{{img_url}}w_covered.png'></image>
+        <image wx:else src='{{img_url}}w_cover.png'></image>
+        <text>全选</text>
+      </view>
+      <block wx:if="{{!isEdit}}" class="cho">
+        <view class='total'>
+          <text>合计:</text>
+          <text class='money'>¥{{totalMoney}}</text>
+        </view>
+        <view class="btn_amount{{totalCount == 0 ? ' editNo':''}}" bindtap='settle'>
+          <button>结算</button>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="del{{totalCount == 0 ? ' editNo':''}}" bindtap = 'del'>
+          <button>删除</button>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

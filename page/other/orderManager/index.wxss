@@ -1,0 +1,138 @@
+page{
+  background-color: #f1f1f1;
+}
+.head{
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+}
+.heads{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 96%;
+  margin: 0 auto;
+}
+.opera{
+  width: 20%;
+  padding: 20rpx 0;
+  color: #a4a4a4;
+  font-size: 30rpx;
+  margin:0 auto;
+  text-align: center;
+}
+.active{
+  color: #f29992;
+  border-bottom:1rpx solid #f29992;
+}
+.hed{
+  height: 80rpx;
+}
+.body{
+  margin: 30rpx 0;
+  height: 100%;
+}
+.products{
+  height: 340rpx;
+  width: 95%;
+  margin: 0 auto;
+  background-color: #fff;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  font-size: 22rpx;
+}
+.product-single{
+  padding: 10rpx 0;
+  margin: 0 auto;
+  border-bottom: 3rpx solid #ececec;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+}
+.locates{
+  color: #bcbcbc;
+  width: 85%;
+}
+.product-single image{
+  width: 30rpx;
+  height: 30rpx;
+  margin:0 10rpx;
+}
+.store{
+  display: inline-block;
+  margin-left: 130rpx;
+}
+.state{
+  color: #f88f88;
+  font-size: 25rpx;
+  font-weight: 700;
+}
+.proInfo{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  height: 160rpx;
+  width: 95%;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+.proInfo image{
+  height: 160rpx;
+  width: 170rpx;
+}
+.info1{
+  width: 50%;
+}
+.pro-title{
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+.proInfo image{
+  height: 140rpx;
+  width: 140rpx;
+}
+.property{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.show-property{
+  background-color: #ededed;
+  border-radius:10rpx;
+  color: #a5a5a5;
+  margin-right:10rpx;
+  width: 100rpx;
+  text-align: center;
+}
+.price{
+  width: 30%;
+  color: #bcbcbc;
+  font-size: 18rpx;
+  text-align: right;
+}
+.btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  line-height: 40rpx;
+  margin: 12rpx 0;
+}
+.operate{
+  border: 1rpx solid #969696;
+  color: #ccc;
+  border-radius: 20rpx;
+  margin-left:10rpx;
+  margin-right: 20rpx;
+  padding: 0 15rpx;
+  text-align: center;
+  width: 110rpx;
+}
+.act{
+  color: #f55c51;
+  border: 1rpx solid #f55c51;
+}

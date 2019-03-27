@@ -1,0 +1,6 @@
+<view class='num_wrap'>
+  <view class='btn' catchtap='subtract' disabled='{{count<=1}}'>-</view>
+  <input type='number' value='{{count}}' bindinput='changeNum'></input>
+  <view class='btn' catchtap='add'>+</view>
+</view>
+

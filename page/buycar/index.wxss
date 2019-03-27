@@ -1,0 +1,217 @@
+page{
+  background-color: #f1f1f1;
+}
+.empty_wrap{
+  width: 100%;
+  padding: 60rpx 0 30rpx;
+  text-align: center;
+}
+.empyt_icon{
+  width: 180rpx;
+  height: 180rpx;
+}
+.empyt_txt{
+  display: block;
+  font-size: 32rpx;
+  color: rgba(51,51,51,.66);
+  line-height: 48rpx;
+  margin: 22rpx 0;
+}
+.head{
+  height: 250rpx;
+  background-color: #f54844;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: row;
+}
+.head image{
+  margin-top: 10rpx;
+  height: 40rpx;
+  width: 40rpx;
+}
+.goodsNum{
+  margin-top: 13rpx;
+  width: 70%;
+  margin-left: 5%;
+  font-size: 35rpx;
+  color: #fff;
+  font-family: '宋体';
+}
+.head text{
+  color: #fff;
+  margin: 13rpx;
+  font-size: 35rpx;
+  font-family: '宋体';
+  width: 80rpx;
+  height: 50rpx;
+}
+.body{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 70rpx;
+}
+.content{
+  padding: 10rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  margin-bottom:35rpx;
+  height: 250rpx;
+  border-radius: 30rpx;
+}
+.select_icon{
+  width: 8%;
+  position: relative;
+}
+.select_icon image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -20rpx;
+  margin-left: 10rpx;
+}
+.goods{
+ width: 100%;
+ padding: 20rpx 10rpx;
+ border-radius: 8rpx;
+ /* box-shadow: 0 1rpx 4rpx rgba(150,150,150,0.3); */
+ display: flex;
+ flex-direction: row;
+}
+.goods .good_img{
+  margin-top: 20rpx;
+  width: 180rpx;
+  height: 180rpx;
+}
+.good_info{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+.good_title{
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 5rpx 0;
+  font-size: 26rpx;
+}
+.selectPro{
+  padding: 10rpx 0;
+  margin-bottom: 25rpx;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  background-color: #f5f5f5;
+  /* border-radius: 20rpx; */
+}
+.selected{
+  width: 88%;
+  padding-left:20rpx; 
+  font-size: 26rpx;
+  color: #b2b2b2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.selectPro image{
+  height: 15rpx;
+  width: 25rpx;
+  margin: auto 10rpx;
+}
+.good_price{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.good_price .price{
+  padding: 12rpx;
+  line-height: 40rpx;
+  color: #e4393c;
+  font-size: 30rpx;
+}
+.end{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  height: 120rpx;
+  box-shadow: 0 -2px 1px #e5e5e5;
+  z-index: 9;
+}
+.select_all{
+  width:40%;
+  line-height: 100rpx;
+  font-size: 24rpx;
+  color: #999;
+  box-sizing: border-box;
+  padding-left: 60rpx;
+  padding-top: 10rpx;
+}
+.select_all image{
+  width: 36rpx;
+  height: 36rpx;
+  padding-bottom: 7rpx;
+  vertical-align: middle;
+}
+.select_all text{
+  padding: 0 20rpx;
+}
+.total{
+  width: 40%;
+  box-sizing: border-box;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  font-family: '宋体';
+  padding-top: 10rpx;
+}
+.total .money{
+  color: #e4393c;
+  font-weight: 700;
+  padding: 0 5rpx;
+}
+.btn_amount{
+  width: 40%;
+  height: 100rpx;
+  margin-top: 10rpx;
+  margin-right: 10rpx;
+}
+.btn_amount button{
+  font-size: 38rpx;
+  background-color: #e4393c;
+  color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 54rpx;
+}
+.del{
+  width: 32%;
+  height: 100rpx;
+  margin-top: 10rpx;
+  margin-left: 200rpx;
+}
+.del button{
+  font-size: 38rpx;
+  background-color: #e4393c;
+  color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 54rpx;
+}
+.editNo button{
+  background-color: #999;
+}
+.endw{
+  height: 100rpx;
+}

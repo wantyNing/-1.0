@@ -1,0 +1,79 @@
+<view>
+  <view class="head">
+    <view class="content">
+      <image src="{{img_url}}w_location.png"></image>
+      <view class="accept">
+        <view class="name">
+          <text class="nameText">收货人:{{name}}</text>
+          <text>{{phone}}</text>
+        </view>
+        <view class="address">
+          <view>收货地址:{{address}}</view>
+          <image src="{{img_url}}next.png"></image>
+        </view>
+      </view> 
+    </view>
+    <image src="{{img_url}}w_line.png" class="decorate" bindtap='gotoAddressEdit'></image>
+  </view>
+  <view style='height:10rpx; margin-top:155rpx;'></view>
+  <view class='productInfo'>
+    <block wx:for="{{buylist}}" wx:key="buylist" wx:for-item="order">
+      <view class="order">
+        <view style='width=40rpx;' class="order-single">
+          <image src="{{img_url}}w_house.png"></image>
+          <text>{{order["仓库"]}}仓</text>
+        </view>
+        <view class="orderInfo">
+          <image src="{{order.mainPicUrl}}"></image>
+          <view>
+            <view>{{order.title}}</view>
+            <view class="property">{{order.property}}</view>
+            <view class='rowflex' style='margin-top:35rpx;'>
+              <view class="price">￥{{order.price}}</view>
+              <view style='color:#9d9d9d;margin-top:8rpx;'>x{{order.total}}</view>
+            </view>
+          </view>
+        </view>
+        <view style='width:95%;margin: 20rpx auto;'>
+          <view class="chose_logistic">
+            <view>选择物流</view>
+            <view>{{order.logisticChose}}物流></view>
+          </view>
+          <view class="logprice">￥{{order.logistic[order.logisticChose]}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="costDetail">
+    <view class="costHead">费用明细</view>
+    <view class="costBody">
+      <view class="chose_logistic">
+        <view class="blank">产品总额</view>
+        <view class="blank1">￥{{costAll}}</view>
+      </view>
+      <view class="chose_logistic">
+        <view class="blank">处理费</view>
+        <view class="blank1">+￥{{costDeal}}</view>
+      </view>
+      <view class="chose_logistic">
+        <view class="blank">保险费</view>
+        <view class="blank1">+￥{{insure}}</view>
+      </view>
+      <view class="chose_logistic">
+        <view class="blank">运费</view>
+        <view class="blank1">+￥{{logistic}}</view>
+      </view>
+      <view class="chose_logistic">
+        <view class="blank">VIP折扣</view>
+        <view class="blank1">-￥{{bargincost}}</view>
+      </view>
+    </view>
+  </view>
+  <view style='height: 120rpx;'></view>
+  <view class="end">
+    <text style='line-height:100rpx; '>合计：</text>
+    <view class="total">￥{{cost}}</view>
+    <view class="btn" bindtap='pay'>结算</view>
+  </view>
+</view>
+<pay bind:finishPay="gotoFinish" bind:back="back" isShowPopup="{{isShowPopup}}" userInfo="{{userInfo}}"></pay>

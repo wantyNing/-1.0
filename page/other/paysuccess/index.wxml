@@ -1,0 +1,7 @@
+<view class="title">
+  <icon type="success" size="{{item}}" class='icon'/>
+  <view class="state">交易成功</view>
+  <view class="price">￥{{price}}</view>
+</view>
+<view class="end" bindtap='goBack'>返回购物车</view>
+<view class="notice">温馨提示：如有任何疑问，请联系客服</view>

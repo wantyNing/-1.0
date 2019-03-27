@@ -1,0 +1,17 @@
+<view hidden="{{!isShowPopup}}" class="popupDom" data-target="current">
+  <view class="body">
+    <view class="body-head">
+      <image src="http://wanty.oss-cn-beijing.aliyuncs.com/haili/money.png"></image>
+      <view class="desp">二维码付款</view>
+    </view>
+    <view class="body-scan">
+      <view class="title">海狸商城平台</view>
+      <view class="price">￥{{userInfo.price}}</view>
+      <image src="http://wanty.oss-cn-beijing.aliyuncs.com/haili/scan.png"></image>
+    </view>
+  </view>
+  <view class='end'>
+    <view class="item" bindtap='scan'>识别图中二维码</view>
+    <view class='item' bindtap='back'>退出支付</view>
+  </view>
+</view>

@@ -1,0 +1,58 @@
+<image src="http://wanty.oss-cn-beijing.aliyuncs.com/haili/new1.png" class="bg_pic"></image>
+<image src="http://wanty.oss-cn-beijing.aliyuncs.com/haili/page1.jpg" class="pa1"></image>
+<image src="http://wanty.oss-cn-beijing.aliyuncs.com/haili/page11.png" class="pa11"></image>
+<view class='resp'>
+  <view class="item">新</view>
+  <view class="item">人</view>
+  <view class="item">见</view>
+  <view class="item">面</view>
+  <view class="item">礼</view>
+</view>
+<image src="http://wanty.oss-cn-beijing.aliyuncs.com/haili/page2.jpg" class="pa1"></image>
+<view class="paper">
+  <block wx:for="{{paper}}" wx:key='paper'>
+    <view class="paper-item">
+      <view class='left'>
+        <view class="left-dot">￥</view>
+        <view class="left-value">
+          <view class='left-top'>
+            <view class="price">{{item.value}}</view>
+            <view class="texts">新人券</view>
+          </view>
+          <view class="left-bottom">
+            <view class="disp">{{item.desc}}</view>
+            <view class="time">期限：{{item.text}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='right' bindtap='getcoupon' data-index="{{index}}" wx:if="{{item.state==1}}">
+        <view class="right-item">立</view>
+        <view class="right-item">即</view>
+        <view class="right-item">领</view>
+        <view class="right-item">取</view>
+      </view>
+      <view class="right" wx:else bindtap='gotoSearch'>
+        <view class="right-item">立</view>
+        <view class="right-item">即</view>
+        <view class="right-item">使</view>
+        <view class="right-item">用</view>
+      </view>
+    </view>
+  </block>
+</view>
+<image src="http://wanty.oss-cn-beijing.aliyuncs.com/haili/page3.jpg" class="pa1"></image>
+<view style='width:95%;margin:0 auto;'>
+  <block wx:for="{{hot_goods}}" wx:key="hot" wx:for-item="hotP">
+      <view data-id="{{hotP.id}}" class="hot-item">
+        <view class="goods_name">{{hotP.name}}</view>
+        <view class="goods_sellpoint">{{hotP.sellingPoint}}</view>
+        <image src="{{hotP.pictureUrl}}"></image>
+        <view style='display:flex; flex-direction:row; font-size:22rpx;color:#898989;margin-left:30rpx;'>
+          <view style='font-size:22rpx; padding-left:10rpx;'>销量：{{hotP.sale}}</view>
+          <view style='margin-left:20rpx;'>下载数：1000</view>
+        </view>
+        <view class="goods_price">￥{{hotP.price}}</view>
+      </view>
+  </block>
+</view>
+<view class="end" style='color:#fff9e9;'>ssss</view>

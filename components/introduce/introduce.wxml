@@ -1,0 +1,30 @@
+<view class="detail">
+  <view wx:if="{{currentTab==0}}" class="introduces">
+    <image class="descr" src='{{img_url}}x8_1.jpg'></image>
+  </view>
+  <view wx:elif="{{currentTab==1}}" class="paratems">
+    <view class="attribute">
+      <view class="title">
+        <view class='line'></view>
+        <view class="content">包装清单</view>
+        <view class="line"></view>
+      </view>
+      <view class="attribute menu">{{list.compactDesign}}</view>
+      </view>
+      <view class="attribute">
+        <view class="title">
+        <view class='line'></view>
+        <view class="content">商品参数</view>
+        <view class="line"></view>
+      </view>
+      <image src='{{img_url}}attribute.png'></image>
+    </view>
+  </view>
+  <view wx:elif="{{currentTab==2}}" class="cost">
+    <view>成本估算</view>
+  </view>
+  <view wx:else class="sale">
+    <view>售后服务</view>
+  </view>
+  <view style='height:100rpx;'></view>
+</view>

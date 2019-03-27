@@ -1,0 +1,104 @@
+<view class="search">
+  <view class="searchHead" bindtap="appear">
+    <view class="searchLeft">
+      <image src="{{img_url}}search.png"></image>
+    </view>
+    <input type="text" placeholder='搜索平台商品' placeholder-class='holder' 
+    bindinput='searchGoods' id="search" value="{{name}}"/>
+    <view wx:if="{{name!=''}}" class="searchRight">
+      <image src="{{img_url}}cancel.png" bindtap='resetSearch'></image>
+    </view>
+  </view>
+  <view class="btndisp" hidden='{{isSearch}}'>
+     <view class="btn" bindtap='getGoods'>确定</view>
+  </view>
+</view>
+<view class="hr"></view>
+<view wx:if="{{!isSearch}}" style='height:1200rpx;background-color: #fff;'>
+  <view style='height:90rpx;'></view>
+  <block wx:if="{{result.length>0}}">
+    <block wx:for="{{result}}" wx:key="*this">
+      <view class="item">
+        <view class="goodsName" data-gid="{{item}}" catchtap='setValue'>{{item}}</view>
+      </view>
+    </block>
+  </block>
+  <block wx:else>
+    <view class='title'>
+      <view class="headdown">
+        <view class="left">热门搜索</view>
+        <view class="right" catchtap='changeS'>换一批</view>
+      </view>
+      <view class="tips">
+        <block wx:for="{{hotlist}}" wx:key="hot">
+          <view class="tip" bindtap="setValue" data-gid="{{item}}">{{item}}</view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>
+<view wx:else style='background-color: #fff;'>
+  <view class='dispHead'>
+    <view class='leftHead'>
+      <view class='orderstyle' bindtap='composite' data-item='0'>
+        <view class="ites">综合</view>
+        <image wx:if='{{choiceflag1}}' src="{{img_url}}下三角.png"></image>
+        <image wx:else src="{{img_url}}上三角.png"></image>
+      </view>
+      <view bindtap='composite' data-item='1'>
+        <view class="ites">销量</view>
+      </view>
+      <view class="orderstyle" bindtap='composite' data-item='2'>
+        <view class='ites'>服务</view>
+        <image wx:if='{{choiceflag2}}' src="{{img_url}}下三角.png"></image>
+        <image wx:else src="{{img_url}}上三角.png"></image>
+      </view>
+      <view class="ordersize" catchtap='changeShow'>
+        <image src="{{img_url}}liebiao.png"></image>
+      </view>
+    </view>
+    <view style='width=5%;margin-top:30rpx;border-right:1rpx solid #b0b0b0;height:40rpx;'></view>
+    <view class='rightHead'>
+      <view class="ites">筛选</view>
+      <image src='{{img_url}}shaixuan.png'></image>
+    </view>
+  </view>
+  <!-- <view class="selectType" hidden='{{choiceflag1&&choiceflag2}}'>
+    <block wx:for="{{be-select}}" wx:key="select">
+      <view class="select-items">
+        <view>{{item.text}}</view>
+        <image wx:if="{{item.index==index}}"></image>
+      </view>
+    </block>
+  </view> -->
+  <view style='height:180rpx;'></view>
+  <view class="body" style='height:{{componentHeight}}'>
+    <block wx:for="{{goodsList}}" wx:key="goodsList">
+      <view wx:if="{{doubleList}}" class="type1" bindtap='godetail'  data-id="{{item.productId}}">
+        <image src="{{item.mainPicUrl}}"></image>
+        <view class="descrip">{{item.title}}</view>
+        <view style='color:#f88a81;font-size:30rpx;margin-bottom:10rpx;margin-left: 10rpx;'>￥{{item.price}}</view>
+        <view style='margin-left: 10rpx;display:flex; flex-direction:row; font-size:22rpx;color:#898989;'>
+          <view>下载次数：{{item.downloadTime}}</view>
+          <view style='margin-left:20rpx;'>销量：{{item.sell}}</view>
+        </view>
+      </view>
+      <view wx:else>
+        <view class="type2" bindtap='godetail' data-id="{{item.productId}}">
+          <image src="{{item.mainPicUrl}}"></image>
+          <view style='border-bottom:1rpx solid #ccc'>
+            <view class="descrip" style='margin-top:20rpx;'>{{item.title}}</view>
+            <view class="orderstyle">
+              <view style='color:#f88a81;font-size:34rpx;margin:0 30rpx 30rpx 0;'>￥{{item.price}}</view>
+              <view class="manjian">满减</view>
+            </view>
+            <view style='display:flex; flex-direction:row; font-size:22rpx;color:#898989;'>
+               <view>下载次数：{{item.downloadTime}}</view>
+               <view style='margin-left:20rpx;'>销量：{{item.sell}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

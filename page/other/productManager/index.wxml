@@ -1,0 +1,58 @@
+<view class="product">
+  <view class='head'>
+    <view class="heads"> 
+      <view class="opera{{tab == 0?' active' : ''}}" bindtap='click' data-tap="0">全部</view>
+      <view class="opera{{tab == 1?' active' : ''}}" bindtap='click' data-tap="1">审核中</view>
+      <view class="opera{{tab == 2?' active' : ''}}" bindtap='click' data-tap="2">销售中</view>
+      <view class="opera{{tab == 3?' active' : ''}}" bindtap='click' data-tap="3">已下架</view>
+      <view class="opera{{tab == 4?' active' : ''}}" bindtap='click' data-tap="4">即将缺货</view>
+    </view>
+  </view>
+  <view class="hed"></view>
+  <view class="body">
+      <block wx:for="{{showprolist}}" wx:key="prolist" wx:for-item="order">
+      <view class="products">
+        <view class="product-single">
+          <view class="locates">
+             <image src="{{img_url}}logo.png"></image>
+             <text>{{order["locate"]}}平台</text>
+             <text class="store">店铺：{{order['name']}}</text>
+          </view>
+          <view class="state">
+            <text wx:if="{{order.state==0}}">审核中</text>
+            <text wx:elif="{{order.state==1}}">销售中</text>
+            <text wx:elif="{{order.state==2}}">已下架</text>
+            <text wx:else="{{order.state==3}}">即将缺货</text>
+          </view>
+        </view>
+        <view class="proInfo" bindtap='gotoGoodsDetail' data-id="{{order.productId}}">
+          <image src="{{order.mainPicUrl}}"></image>
+          <view class="info1">
+            <view class="pro-title">{{order.title}}</view>
+            <view class="property">
+              <block wx:for="{{order.property}}" wx:key="property" wx:for-item="pros">
+                <view class="show-property">{{pros}}</view>
+              </block>
+            </view>
+          </view>
+          <view class='price'>
+            <view>售价：<text style='color:#000;font-size:22rpx;'>￥{{order.price}}</text></view>
+            <view style='margin: 20rpx 0;'>平台价：￥{{order.usprice}}</view>
+            <view style='margin-top: 55rpx;'>月销量：
+              <text wx:if="{{order.sell}}">{{order.sell}}</text>
+              <text wx:else>-</text>
+              件
+            </view>
+          </view>
+        </view>
+        <view class="btn">
+          <block wx:if="{{order.state==0}}"><view class="operate">等待审核</view></block>
+          <block wx:elif="{{order.state==1}}"><view class="operate act">快速下架</view></block>
+          <block wx:elif="{{order.state==2}}"><view class="operate">删除产品</view>
+          <view class="operate act">再次刊登</view></block>
+          <block wx:else="{{order.state==3}}"><view class="operate act">快速下架</view></block>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

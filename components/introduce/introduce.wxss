@@ -1,0 +1,35 @@
+.detail{
+  height: 500rpx;
+}
+.descr{
+  height: 3500rpx;
+  width: 100%;
+}
+.attribute{
+  margin: 0 20rpx;
+  margin-top: 40rpx;
+}
+.title{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  height: 30rpx;
+}
+.line{
+  width: 38%;
+  height: 20rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.content{
+  padding: 0 20rpx;
+  color: #8a8a8a;
+  font-size: 32rpx;
+}
+.menu{
+  font-size: 30rpx;
+}
+.attribute image{
+  margin-top: 40rpx;
+  height: 4500rpx;
+  width: 100%;
+}
